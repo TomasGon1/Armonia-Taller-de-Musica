@@ -1,0 +1,12 @@
+<h2>Avisos</h2>
+
+<a href="/admin/news/create">Crear nuevo aviso</a>
+
+<ul>
+  {{#each news}}
+    <li>
+      <strong>{{this.title}}</strong>
+      <a href="/admin/news/delete/{{this._id}}">Eliminar aviso</a>
+    </li>
+  {{/each}}
+</ul>

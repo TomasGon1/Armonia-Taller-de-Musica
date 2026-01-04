@@ -1,0 +1,22 @@
+<h2>Crear aviso</h2>
+
+<form action="/admin/news/create" method="POST">
+  <div>
+    <label>Título</label>
+    <input type="text" name="title" required>
+  </div>
+
+  <div>
+    <label>Contenido</label>
+    <textarea name="content" required></textarea>
+  </div>
+
+  <div>
+    <label>
+        <input type="checkbox" name="linkToContact">
+        Mostrar botón de "Consultar"
+    </label>
+  </div>
+
+  <button type="submit">Crear</button>
+</form>

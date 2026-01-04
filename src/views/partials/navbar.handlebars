@@ -1,0 +1,19 @@
+<nav>
+  <ul>
+    <li>
+      {{! Navbar administrador }}
+      {{#if user}}
+        {{#if (eq user.role "admin")}}
+          <a href="/admin">Panel de Administrador</a>
+          <a href="/admin/news">Avisos</a>
+          <a href="/logout"> Cerrar Sesión</a>
+        {{/if}}
+      {{else}}
+        {{! Navbar usuario }}
+        <a href="/">Inicio</a>
+        <a href="/conocenos">Conócenos</a>
+        <a href="/contacto">Contacto</a>
+      {{/if}}
+    </li>
+  </ul>
+</nav>
