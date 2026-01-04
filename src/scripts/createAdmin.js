@@ -4,18 +4,23 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/User.js");
 
 const createAdmin = async () => {
-  await connectDB();
+  try {
+    await connectDB();
 
-  const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASS, 10);
+    const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASS, 10);
 
-  const admin = new User({
-    username: proccess.env.ADMIN_USER,
-    password: hashedPassword,
-  });
+    const admin = new User({
+      username: process.env.ADMIN_USER,
+      password: hashedPassword,
+    });
 
-  await admin.save();
-  console.log("admin creado");
-  process.exit();
+    await admin.save();
+    console.log("admin creado");
+  } catch (error) {
+    console.error("Error al crear el admin:".error);
+  } finally {
+    process.exit();
+  }
 };
 
 createAdmin();
